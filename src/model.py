@@ -6,7 +6,7 @@ from sklearn import metrics
 import pickle
 import numpy as np
 
-def create_model():
+def create_model(display_metrics=False):
     # import the data from data/winequality.csv
     data = pd.read_csv('data/winequality.csv')
 
@@ -31,9 +31,13 @@ def create_model():
 
     # evaluate the model
     predictions = model.predict(test_features)
-    print('Mean Absolute Error:', metrics.mean_absolute_error(test_labels, predictions))
-    print('Mean Squared Error:', metrics.mean_squared_error(test_labels, predictions))
-    print('Root Mean Squared Error:', np.sqrt(metrics.mean_squared_error(test_labels, predictions)))
+
+    if display_metrics:
+        # print the metrics
+        print('Accuracy:', metrics.accuracy_score(test_labels, predictions))
+        print('Precision:', metrics.precision_score(test_labels, predictions, average='weighted'))
+        print('Recall:', metrics.recall_score(test_labels, predictions, average='weighted'))
+        print('F1 score:', metrics.f1_score(test_labels, predictions, average='weighted'))
 
     # save the model in file model.pkl
     pickle.dump(model, open('model.pkl', 'wb'))

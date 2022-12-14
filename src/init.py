@@ -9,6 +9,7 @@ import numpy as np
 import json
 import os
 from model import create_model
+from threading import Thread
 
 app = Flask(__name__)
 api = Api(app)
@@ -36,7 +37,7 @@ def endpoints():
                  '/winequality/predict', '/winequality/retrain']
     return jsonify(endpoints)
 
-@app.route('/winequality')
+@app.route('/model')
 def info():
     # get the model informations
     model_info = model.get_params()
@@ -45,17 +46,12 @@ def info():
 
 # endpoint that shows the base data of the model
 @app.route('/data', methods=['GET'])
-def datahtml():
+def datahtml(head=True):
     # load the data
     data = pd.read_csv('data/winequality.csv')
-    data = data.head()
-    # convert to json
-    data = data.to_html()
-    # add a title
-    data = '<h1>Wine Quality Data Exemple</h1>' + data
-    # return data in html format
-
-    return data
+    if head:
+        data = data.head(10)
+    return {"data" : data.to_string() }
 
 # endpoint that gives the performance of the model
 @app.route('/performance', methods=['GET'])
@@ -69,26 +65,25 @@ def performance(self):
     # send back to browser
     output = {'results': int(result[0])}
     # return data
-    return jsonify(results=output)
+    return jsonpify(results=output)
 
-@app.route('/predict', methods=['POST'])
-def post():    
+@app.route('/predict', methods=['PUT'] )
+def predict():    
+    print("helloooo")
     # get the data from the POST request.
     # The data is in the form of a string and does not have the quality in it
-    data = request.get_json(force=True)['data'].split(',')
-
-    data_df = pd.DataFrame([data])
-    
+    print(request.get_json()['data'].split(','))
+    data = request.get_json()['data'].split(',')
+    # data_df = pd.DataFrame([data])
+    #print("helloooo", data_df)
     # predictions
-    result = model.predict(data_df)
-    # send back results
-    output = {'results': int(result[0])}
-    # return data
-    return jsonify(results=output)
+    #result = model.predict(data_df)
+
+    return jsonify({'results': 1 }) # result[0]})
 
 # add an endpoint to retrain the model with new data
 @app.route('/retrain', methods=['PUT'])
-def put():
+def retrain():
     # get the data
     request_json = request.get_json(force=True)
     print(request_json)
@@ -120,10 +115,6 @@ def put():
     # return a message
     return jsonify('Model successfully retrained.')
 
-
-
-# Path: init.py
 if __name__ == '__main__':
-    # enable debug mode
     app.run(debug=True)
-    app.run(port='5002')
+    app.run(port='8080') 
