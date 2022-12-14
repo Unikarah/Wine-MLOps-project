@@ -9,6 +9,7 @@ import numpy as np
 import json
 import os
 from model import create_model
+
 app = Flask(__name__)
 api = Api(app)
 CORS(app)
