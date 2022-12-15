@@ -3,7 +3,7 @@ from front_utils import *
 
 # BASE OF THE PAGE
 
-url = "http://127.0.0.1:8080"
+url = "http://127.0.0.1:5002"
 
 
 # create a simple API frontend using streamlit

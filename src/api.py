@@ -85,13 +85,11 @@ def retrain():
     # remove all empty lines
     data = [d for d in data if d != '']
     # separate the columns from the data
-    print(data)
     columns = data[0].split(',')
     data = [ d.split(',') for d in data[1:]]
 
     # convert data into dataframe
     data_df = pd.DataFrame(data, columns=columns)
-    print(data_df.head())
     # separate input features and target
     X = data_df.iloc[: , : -1]
     y = data_df.iloc[:, -1]

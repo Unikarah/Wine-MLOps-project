@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 import pandas as pd
 
-url = "http://127.0.0.1:8080"
+url = "http://127.0.0.1:5002"
 
 # get the model informations
 def get_model_info():
