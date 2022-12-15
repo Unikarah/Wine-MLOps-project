@@ -6,7 +6,7 @@ from sklearn import metrics
 import pickle
 import numpy as np
 
-def create_model(display_metrics=False):
+def create_model():
     # import the data from data/winequality.csv
     data = pd.read_csv('data/winequality.csv')
 
@@ -32,12 +32,12 @@ def create_model(display_metrics=False):
     # evaluate the model
     predictions = model.predict(test_features)
 
-    if display_metrics:
-        # print the metrics
-        print('Accuracy:', metrics.accuracy_score(test_labels, predictions))
-        print('Precision:', metrics.precision_score(test_labels, predictions, average='weighted'))
-        print('Recall:', metrics.recall_score(test_labels, predictions, average='weighted'))
-        print('F1 score:', metrics.f1_score(test_labels, predictions, average='weighted'))
+    # save the metrics in file metrics.txt
+    with open('model/metrics.txt', 'w') as f:
+        f.write('For the accuracy:' + str(metrics.accuracy_score(test_labels, predictions)) + '\n')
+        f.write('For the recision: ' + str(metrics.precision_score(test_labels, predictions, average='weighted')) + '\n')
+        f.write('For the recall:' + str(metrics.recall_score(test_labels, predictions, average='weighted')) + '\n')
+        f.write('For the F1 score:' + str(metrics.f1_score(test_labels, predictions, average='weighted')))
 
     # save the model in file model.pkl
-    pickle.dump(model, open('model.pkl', 'wb'))
+    pickle.dump(model, open('model/model.pkl', 'wb'))

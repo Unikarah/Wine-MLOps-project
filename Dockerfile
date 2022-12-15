@@ -1,5 +1,5 @@
 FROM ubuntu:18.04
 
-RUN pip install requirement.txt
+RUN pip install -r requirement.txt
 
 RUN python init.py

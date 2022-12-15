@@ -1,0 +1,4 @@
+For the accuracy:0.56875
+For the recision: 0.535843459088682
+For the recall:0.56875
+For the F1 score:0.5360195512842114

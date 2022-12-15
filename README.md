@@ -1,29 +1,33 @@
 # MLOPS
 
 ## Authors
-Sarah Gutierez
+Sarah Gutierez \
 Adrien Houpert
 
-## About the project
+## About the model
 
-[Red Wine Dataset](https://www.kaggle.com/datasets/uciml/red-wine-quality-cortez-et-al-2009?select=winequality-red.csv)
-### To run 
+The model implementation can be found in the file `src/model.py`. It uses the 
+[Red Wine Dataset](https://www.kaggle.com/datasets/uciml/red-wine-quality-cortez-et-al-2009?select=winequality-red.csv) from Kaggle.
+
+## To run the project
 The hole project:
 ```bash
-./winequality.sh
+TODO
 ```
 
 Only the API:
 ```bash
-python init.py
+python api.py
 ```
-Only the front end:
+Only the front end (but without the API it will most certainly crash):
 ```bash
-streamlit run front.py
+streamlit run WineQuality.py
 ```
 
-### To test
+## To test the API
 
 You have multiple way to test the API.
-```bash
-```
+
+You can either do it by hand in your terminal using curl and the adress : 'http://127.0.0.1:5002'.
+
+Or you can use our wonderful frontend and just click on the different parts!
