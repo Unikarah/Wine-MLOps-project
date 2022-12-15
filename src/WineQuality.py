@@ -25,7 +25,7 @@ get_data_info()
 
 # change the size of the page
 st.header('The model')
-st.subheader("The dataset")
+st.subheader("The dataset :floppy_disk:")
 st.markdown(
     'The model uses the \
         [Red Wine Quality](https://www.kaggle.com/uciml/red-wine-quality-cortez-et-al-2009) dataset on Kaggle.')
@@ -46,23 +46,23 @@ st.markdown("- **sulphates**: a wine additive which can contribute to sulfur dio
 st.markdown("- **alcohol**: the percent alcohol content of the wine")
 st.markdown("- **quality**: output variable (based on sensory data, score between 0 and 10)")
 
-st.subheader("The model")
+st.subheader("The model :brain:")
 st.markdown("The model is a Random Forest Regressor. The model is trained on the data and the performance is evaluated using the mean absolute error. The model is then saved and can be used to predict the quality of a wine.")
 st.markdown("In the following sections you can see the model informations and\
     the performance of the model.")
-with st.expander("The model informations"):
+with st.expander("The model informations :information_source:"):
     get_model_info()
 
-with st.expander("The performance of the model"):
+with st.expander("The performance of the model :chart_with_upwards_trend:"):
     get_performance()
 
 st.header("Interact with the model")
 st.markdown("In the following sections you can interact with the model. You can\
     predict the quality of a wine based on its characteristics or retrain the model")
-with st.expander("Predict the quality of a wine"):
+with st.expander("Predict the quality of a wine :wine_glass:"):
     predict_quality()
 
-with st.expander("Retrain the model"):
+with st.expander("Retrain the model :repeat:"):
     uploaded_file = st.file_uploader(
         "Choose a CSV with the new wine data", type="csv")
     if uploaded_file is not None:
