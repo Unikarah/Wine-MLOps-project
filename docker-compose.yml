@@ -1,0 +1,13 @@
+version: "3"
+services:
+  api:
+    build: src/
+    hostname: mlops-api
+    ports:
+      - "5002:5002"
+
+  web:
+    build: .
+    hostname: mlops-web
+    ports:
+      - "8501:8501"

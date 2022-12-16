@@ -1,0 +1,9 @@
+scikit-learn
+flask
+pandas
+numpy
+flask_jsonpify
+joblib
+flask_restful
+flask_cors
+streamlit

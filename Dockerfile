@@ -1,5 +1,9 @@
-FROM ubuntu:18.04
+FROM python:3.9
 
-RUN pip install -r requirement.txt
+EXPOSE 8501
 
-RUN python init.py
+COPY . .
+
+RUN pip3 install -r requirement.txt
+
+ENTRYPOINT ["streamlit", "run", "src/WineQuality.py", "--server.port=8501", "--server.address=0.0.0.0"]
