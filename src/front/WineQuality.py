@@ -44,7 +44,7 @@ st.markdown("- **alcohol**: the percent alcohol content of the wine")
 st.markdown("- **quality**: output variable (based on sensory data, score between 0 and 10)")
 
 st.subheader("The model :brain:")
-st.markdown("The model is a Random Forest. The model is trained on the data and the performance is evaluated using the mean absolute error. The model is then saved and can be used to predict the quality of a wine.")
+st.markdown("The model is a Gradient Bososting Classifier. The model is trained on the data and the performance is evaluated using the accuracy, recision, the recall and the F1 score. The model is then saved and can be used to predict the quality of a wine.")
 st.markdown("In the following sections you can see the model informations and\
     the performance of the model.")
 with st.expander("The model informations :information_source:"):

@@ -12,6 +12,8 @@ The model implementation can be found in the file `src/model/model.py`. It uses 
 ## To run the project
 The hole project:
 
+You might need to run this command with `sudo` at the beginning.
+
 ```bash
 docker-compose up --build
 ```
@@ -29,3 +31,5 @@ You have multiple way to test the API.
 You can either do it by hand in your terminal using curl and the adress : 'http://127.0.0.1:5002'.
 
 Or you can use our wonderful frontend and just click on the different parts!
+
+To try the prediction you can use the information in the file examples.txt

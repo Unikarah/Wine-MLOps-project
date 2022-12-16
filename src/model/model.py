@@ -1,7 +1,8 @@
 # create model that classifies the data in data/winequality.csv
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.preprocessing import StandardScaler
 from sklearn import metrics
 import pickle
 import numpy as np
@@ -22,9 +23,13 @@ def create_model():
 
     # save test data in file test_wine.csv
     test.to_csv('model/data/test_wine.csv', index=False)
+    sc = StandardScaler()
+
+    train_features = sc.fit_transform(train_features)
+    test_features = sc.transform(test_features)
 
     # create a model
-    model = RandomForestClassifier(n_estimators=100, max_depth=5, random_state=42)
+    model = GradientBoostingClassifier()
 
     # train the model
     model.fit(train_features, train_labels)

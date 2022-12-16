@@ -1,0 +1,47 @@
+This is an example of Red Wine you can test
+
+Fixed acid : 6.7 g/L
+volatile acid : 0.76 g/L
+citric acid : 0.02 g/L
+residual sugar : 1.8 g/L
+chlorides 0.078 : g/L
+free sulfur dioxide : 6.0 mg/L
+total sulfur dioxide : 12.0 mg/L
+density : 0.996 g/cm3
+pH : 3.55
+sulphates : 0.63 g/L
+alcohol : 9.95 %
+
+The quality should be around 3
+
+Another example:
+
+Fixed acid: 9.4 g/L
+volatile acid : 0.3 g/L
+citric acid : 0.56 g/L
+residual sugar : 2.8 g/L
+chlorides : 0.08 g/L
+free sulfur dioxide : 6.0 mg/L
+total sulfur dioxide : 17.0 mg/L
+density : 0.9964 g/cm3
+pH : 3.15
+sulphates : 0.92 g/L
+alcohol : 11.7 %
+
+The quality should be around 8
+
+A last one :
+
+Fixed acid : 7.7 g/L
+volatile acid : 0.56 g/L
+citric acid : 0.08 g/L
+residual sugar : 2.5 g/L
+chlorides : 0.114 g/L
+free sulfur dioxide : 14.0 mg/L
+total sulfur dioxide : 46.0 mg/L
+density : 0.9971 g/cm3
+pH : 3.24
+sulphates : 0.66 g/L
+alcohol : 9.6 %
+
+The quality should be around 5
