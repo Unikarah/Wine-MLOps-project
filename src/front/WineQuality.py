@@ -3,14 +3,11 @@ from front_utils import *
 
 # BASE OF THE PAGE
 
-url = "http://mlops-api:5002"
-
-
 # create a simple API frontend using streamlit
 st.title(':wine_glass:' + '_Red Wine Quality Prediction_ ' + ':wine_glass:')
 st.header('An API for predicting wine quality.')
 st.markdown(
-    f'The API is available at {url} and the code is available on Github\
+    f'The API is available at http://127.0.0.1:5002 and the code is available on Github\
         [here](https://github.com/Unikarah/MLOPS)')
 st.markdown("Our objective is to predict the quality of a wine based on its\
      chemical properties. As it can be seen in the data sample bellow, the quality \
@@ -47,7 +44,7 @@ st.markdown("- **alcohol**: the percent alcohol content of the wine")
 st.markdown("- **quality**: output variable (based on sensory data, score between 0 and 10)")
 
 st.subheader("The model :brain:")
-st.markdown("The model is a Random Forest Regressor. The model is trained on the data and the performance is evaluated using the mean absolute error. The model is then saved and can be used to predict the quality of a wine.")
+st.markdown("The model is a Random Forest. The model is trained on the data and the performance is evaluated using the mean absolute error. The model is then saved and can be used to predict the quality of a wine.")
 st.markdown("In the following sections you can see the model informations and\
     the performance of the model.")
 with st.expander("The model informations :information_source:"):

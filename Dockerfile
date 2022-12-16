@@ -6,4 +6,4 @@ COPY . .
 
 RUN pip3 install -r requirement.txt
 
-ENTRYPOINT ["streamlit", "run", "src/WineQuality.py", "--server.port=8501", "--server.address=0.0.0.0"]
+ENTRYPOINT ["streamlit", "run", "src/front/WineQuality.py", "--server.port=8501", "--server.address=0.0.0.0"]

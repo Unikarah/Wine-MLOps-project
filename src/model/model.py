@@ -8,7 +8,7 @@ import numpy as np
 
 def create_model():
     # import the data from data/winequality.csv
-    data = pd.read_csv('data/winequality.csv')
+    data = pd.read_csv('model/data/winequality.csv')
 
     # split the data into training and test sets
     train, test = train_test_split(data, test_size=0.2, random_state=42)
@@ -21,7 +21,7 @@ def create_model():
     test_labels = test['quality']
 
     # save test data in file test_wine.csv
-    test.to_csv('data/test_wine.csv', index=False)
+    test.to_csv('model/data/test_wine.csv', index=False)
 
     # create a model
     model = RandomForestClassifier(n_estimators=100, max_depth=5, random_state=42)

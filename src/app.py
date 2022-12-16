@@ -8,7 +8,7 @@ import pandas as pd
 import numpy as np
 import json
 import os
-from model import create_model
+from model.model import create_model
 from threading import Thread
 
 app = Flask(__name__)
@@ -42,7 +42,7 @@ def info():
 @app.route('/data', methods=['GET'])
 def datahtml(head=True):
     # load the data
-    data = pd.read_csv('data/winequality.csv')
+    data = pd.read_csv('model/data/winequality.csv')
     if head:
         data = data.head(10)
     return {"data": data.to_string()}

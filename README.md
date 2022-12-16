@@ -6,22 +6,20 @@ Adrien Houpert
 
 ## About the model
 
-The model implementation can be found in the file `src/model.py`. It uses the 
+The model implementation can be found in the file `src/model/model.py`. It uses the 
 [Red Wine Dataset](https://www.kaggle.com/datasets/uciml/red-wine-quality-cortez-et-al-2009?select=winequality-red.csv) from Kaggle.
 
 ## To run the project
 The hole project:
+
 ```bash
-TODO
+docker-compose up --build
 ```
 
-Only the API:
+Run only the API:
+
 ```bash
 python api.py
-```
-Only the front end (but without the API it will most certainly crash):
-```bash
-streamlit run WineQuality.py
 ```
 
 ## To test the API
