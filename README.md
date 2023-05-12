@@ -1,4 +1,4 @@
-# MLOPS
+# MLOPS - EPTIA SCIA PROJECT
 
 ## Authors
 Sarah Gutierez \
@@ -26,10 +26,8 @@ python api.py
 
 ## To test the API
 
-You have multiple way to test the API.
+You have multiple way to test the API:
+- You can either do it by hand in your terminal using curl and the adress : 'http://127.0.0.1:5002'.
+- Or you can use our wonderful frontend and just click on the different parts!
 
-You can either do it by hand in your terminal using curl and the adress : 'http://127.0.0.1:5002'.
-
-Or you can use our wonderful frontend and just click on the different parts!
-
-To try the prediction you can use the information in the file examples.txt
+To try the predictions you can use the information in the file examples.txt
